@@ -2,7 +2,7 @@
 /**
 * @author Konstantin Ivanov
 * @version 1.0.0
-* @description Sticky In-Page navigation
+* @description Sticky navigation
 *
 * @class
 * InPageNavigationHeader
@@ -10,13 +10,12 @@
 
 (function (window) {
 
-    var inPageId = document.getElementById("sf-navigation-inpage"),
-        inPageList = document.getElementById('sf-navigation-inpage-list'),
-        inPageListOffsetTop = inPageList.offsetTop;
+    var navId = document.getElementById("navigation"),
+        navOffsetTop = navId.offsetTop;
 
     function StickyInPageNavigation() {
         // Check that navigation exists.
-        if (inPageId.length > 0) {
+        if (navId.length > 0) {
             init();
         }
     }
@@ -35,10 +34,10 @@
         
         window.onscroll = function (e) {
             var y = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-            if (y >= inPageListOffsetTop) {
-                inPageId.className = 'stick';
+            if (y >= navOffsetTop) {
+                navId.className = 'stick';
             } else {
-                inPageId.className = '';
+                navId.className = '';
             }
         }
     }
@@ -56,7 +55,7 @@
  * <!-- SF Accordion wrapper -->
  * <div id="sf-navigation-inpage">
  *  <div class="container">
- *      <ul id="sf-navigation-inpage-list">
+ *      <ul id="navigation">
  *          <li>
  *              <a href="some-link">Link text</a>
  *          </li>
