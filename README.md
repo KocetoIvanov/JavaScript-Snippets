@@ -8,12 +8,12 @@ ___
 function stickyNavigation() {
   window.onscroll = function (e) {
     var y = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop,
-        navClass = document.getElementById("sf-navigation-inpage"),
-        navOffsetTop = document.getElementById("sf-navigation-inpage").offsetTop;
+        navId = document.getElementById("navigation"),
+        navOffsetTop = navId.offsetTop;
     if (y >= navOffsetTop) {
-      navClass.className = 'stick';
+      navId.className = 'stick';
     } else {
-      navClass.className = '';
+      navId.className = '';
     }
   }
 }
